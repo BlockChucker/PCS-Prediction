@@ -176,8 +176,7 @@ console.log("🤗 Welcome! Waiting for next round...");
 //Betting
 predictionContract.on("StartRound", async (epoch) => {
   console.log("🥞 Starting round " + epoch.toString());
-  console.log(
-    "🕑 Waiting " + (GLOBAL_CONFIG.WAITING_TIME / 60000).toFixed(1) + " minutes"
+  console.log("🕑 Waiting " + (GLOBAL_CONFIG.WAITING_TIME / 60000).toFixed(1) + " minutes"
   );
   await sleep(GLOBAL_CONFIG.WAITING_TIME);
   await strategy(GLOBAL_CONFIG.THRESHOLD, epoch);
